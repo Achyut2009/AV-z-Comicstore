@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ultimate Great Fellow - Coming Soon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex justify-between items-center py-3">
+      <a href="index.html" class="text-2xl font-bold">AV'z Comicstore</a>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="home.html" class="hover:text-gray-400">Home</a></li>
+        <li><a href="comics.html" class="hover:text-gray-400">Comics</a></li>
+      </ul>
+      <div class="md:hidden cursor-pointer" onclick="toggleMenu()">
+        <div class="w-6 h-1 bg-white mb-1"></div>
+        <div class="w-6 h-1 bg-white mb-1"></div>
+        <div class="w-6 h-1 bg-white"></div>
+      </div>
+    </div>
+    <ul id="mobileMenu" class="hidden bg-gray-800 text-white md:hidden">
+      <li><a href="home.html" class="block px-4 py-2 hover:bg-gray-700">Home</a></li>
+      <li><a href="comics.html" class="block px-4 py-2 hover:bg-gray-700">Comics</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-cover bg-center h-[30vh] flex items-center justify-center text-center text-white" style="background-image: url('');">
+    <div class="bg-black bg-opacity-50 p-10 rounded-lg">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">"Comic Coming Soon!"</h1>
+      <p class="text-lg md:text-2xl">A thrilling new adventure awaits. Stay tuned for the release!</p>
+    </div>
+  </section>
+
+  <!-- Comic Details -->
+  <section class="container mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Comic Image -->
+      <div>
+        <img src="Screenshot 2024-12-19 131317.png" alt="Comic Cover" class="rounded-lg shadow-lg">
+      </div>
+
+      <!-- Comic Information -->
+      <div>
+        <h2 class="text-3xl font-bold mb-4">About "Highly Flammable Part-2"</h2>
+        <p class="text-lg text-gray-700 mb-4">
+          ----------------------------------------------------------------
+        </p>
+        <p class="text-lg text-gray-700 mb-4">
+          <strong>Release Date:</strong> <span class="text-gray-900 italic">Coming Soon</span>
+        </p>
+        <p class="text-lg text-gray-700 mb-4">
+          <strong>Author:</strong> Viraj Pranshu
+        </p>
+        <button class="px-6 py-3 bg-gray-900 text-white font-bold rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+          Coming Soon
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-2">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 AV'z Comicstore. All rights reserved.</p>
+      <p>Created by <a href="https://achyutpaliwal.netlify.app/" target="_blank" class="text-blue-400 hover:underline">Achyut Paliwal</a></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>

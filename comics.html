@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comics - AV'z Comicstore</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Styles for Hamburger Menu */
+    .hamburger div {
+      transition: all 0.3s ease-in-out;
+    }
+    .hamburger.cross div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.cross div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.cross div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white fixed w-full top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-2xl font-bold">AV'z Comicstore</div>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="home.html" class="hover:text-blue-400 transition">Home</a></li>
+        <li><a href="comics.html" class="hover:text-blue-400 transition">Comics</a></li>
+      </ul>
+      <div class="hamburger md:hidden flex flex-col cursor-pointer" onclick="toggleMenu()">
+        <div class="bg-white w-6 h-0.5 mb-1"></div>
+        <div class="bg-white w-6 h-0.5 mb-1"></div>
+        <div class="bg-white w-6 h-0.5"></div>
+      </div>
+    </div>
+    <ul class="hidden absolute top-14 right-0 bg-gray-900 text-center w-48 py-2 shadow-lg space-y-2 md:hidden" id="mobileMenu">
+      <li><a href="home.html" class="block hover:text-blue-400 transition">Home</a></li>
+      <li><a href="comics.html" class="block hover:text-blue-400 transition">Comics</a></li>
+    </ul>
+  </nav>
+
+  <!-- Comics Section -->
+  <section class="flex-grow container mx-auto px-4 py-20">
+    <!-- Search Bar -->
+    <div class="flex justify-center items-center mb-8">
+      <input 
+        type="text" 
+        id="comicSearch" 
+        placeholder="Search for comics..." 
+        class="w-full max-w-lg border border-gray-300 px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        onkeyup="searchComics()"
+      >
+      <button 
+        onclick="searchComics()" 
+        class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"
+      >
+        Search
+      </button>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-4 text-gray-700">Comics available online...</h2>
+    <p class="hidden text-red-600 text-lg font-medium" id="notFoundMessage">Sorry, book not found</p>
+
+    <div class="flex flex-col gap-6" id="comicsGrid">
+      <div class="comic-card bg-white shadow-md rounded-lg w-full p-6 transform hover:bg-gray-200 transition duration-300" data-title="Highly Flammable Part-1">
+        <h3 class="text-xl font-semibold mb-2">"Highly Flammable Part-1"</h3>
+        <p class="text-gray-600">--By Viraj Pranshu</p>
+        <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"><a href="CH1 (2).pdf" target="_blank">View More </a></button>
+      </div>
+      <div class="comic-card bg-white shadow-md rounded-lg w-full p-6 transform hover:bg-gray-200 transition duration-300" data-title="The Ultimate Great Fellow">
+        <h3 class="text-xl font-semibold mb-2">"The Ultimate Great Fellow"</h3>
+        <p class="text-gray-600">COMING SOON...</p>
+        <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+          <a href="tugf.html" target="_blank">View More </a>
+        </button>
+      </div>
+      <div class="comic-card bg-white shadow-md rounded-lg w-full p-6 transform hover:bg-gray-200 transition duration-300" data-title="Highly Flammable Part-2">
+        <h3 class="text-xl font-semibold mb-2">"Highly Flammable Part-2"</h3>
+        <p class="text-gray-600">COMING SOON...</p>
+        <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+          <a href="comingsoon.html" target="_blank">View More </a>
+        </button>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-2">
+    <p>&copy; 2024 AV'z Comicstore. All Rights Reserved.</p>
+    <a href="https://achyutpaliwal.netlify.app/" target="_blank" class="text-blue-400 hover:underline">Website created by Achyut Paliwal</a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const hamburger = document.querySelector('.hamburger');
+      mobileMenu.classList.toggle('hidden');
+      hamburger.classList.toggle('cross');
+    }
+
+    function searchComics() {
+      const input = document.getElementById('comicSearch').value.toLowerCase();
+      const comicCards = document.querySelectorAll('.comic-card');
+      let found = false;
+
+      comicCards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        if (title.includes(input)) {
+          card.style.display = 'block';
+          found = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('notFoundMessage').classList.toggle('hidden', found);
+    }
+  </script>
+</body>
+</html>
