@@ -1,131 +1,113 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="wCirJoADaKA55lf_yXGAhT7xQEr3QQXk6g6ADvVCq04" />
   <title>AV'z Comicstore</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="google-site-verification" content="wCirJoADaKA55lf_yXGAhT7xQEr3QQXk6g6ADvVCq04" />
   <meta property="og:title" content="AV'z Comicstore">
   <meta property="og:site_name" content="AV'z Comicstore">
-  <meta property="og:url" content="https://avzcomicstore.netlify.app/">
+  <meta property="og:url" content="https://avzcomicomicstore.netlify.app/">
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #1f2937, #4b5563, #6b7280);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #f97316, #ef4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hover-card:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-5px);
+    }
+    .text-shadow {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800 font-sans">
 
   <!-- Navbar -->
-  <nav class="bg-blue-500 text-white">
+  <nav class="gradient-bg text-white shadow-lg">
     <div class="container mx-auto flex items-center justify-between py-4 px-6">
-      <h1 class="text-2xl font-bold">AV'z Comicstore</h1>
+      <h1 class="text-3xl font-extrabold gradient-text">AV'z Comicstore</h1>
       <div class="space-x-6 hidden md:flex">
-        <a href="home.html" class="hover:text-gray-300">Home</a>
-        <a href="comics.html" class="hover:text-gray-300">Comics</a>
+        <a class='hover:text-orange-400' href='/home'>Home</a>
+        <a class='hover:text-orange-400' href='/comics'>Comics</a>
       </div>
       <button id="hamburger" class="block md:hidden text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 py-4 space-y-2">
-      <a href="home.html" class="block text-white hover:text-gray-300">Home</a>
-      <a href="comics.html" class="block text-white hover:text-gray-300">Comics</a>
+      <a class='block hover:text-orange-400' href='/home'>Home</a>
+      <a class='block hover:text-orange-400' href='/comics'>Comics</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-t from-green-200 via-green-300 to-blue-500 text-white py-20 ">
-    <div class="container mx-auto text-center p-6">
-      <h2 class="text-4xl font-bold mb-4">Welcome to AV'z Comicstore</h2>
-      <p class="mb-6">Dive into the world of thrilling and exciting comics created by Viraj and Achyut!</p>
-      <a href="comics.html" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"target="_blank">Explore Comics</a>
+  <section class="py-32 text-center text-white gradient-bg bg-cover bg-center" style="background-image: url('draco.jpg');">
+    <div class="container mx-auto">
+      <h2 class="text-5xl font-extrabold mb-4 gradient-text">Welcome to AV'z Comicstore</h2>
+      <p class="text-lg mb-8">Thrilling adventures by Viraj and Achyut await you!</p>
+      <a class='bg-orange-500 py-3 px-6 rounded-full shadow-lg hover:bg-orange-600 transition' href='comics.html'>Explore Comics</a>
     </div>
   </section>
 
   <!-- Comics Section -->
-  <section class="container mx-auto py-16 bg-gradient-to-t from-green-100 to-green-200">
-    <h3 class="text-3xl font-bold text-center mb-8">Our Comics</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
-      <!-- Comic Card -->
-            <div class="bg-white shadow rounded-lg overflow-hidden hover:bg-gray-200 transition duration-300">
-        <img src="Screenshot 2024-12-19 131317.png" alt="Comic 2" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-bold text-lg">Highly Flammable Book-1: Chapter-1</h4>
-          <p class="text-gray-600 mt-2">An exciting adventure awaits you in this gripping tale.</p>
-          <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"><a href="CH1 (2).pdf" target="_blank">View More </a></button>
-        </div>
+  <section class="container mx-auto py-20">
+    <h3 class="text-4xl font-extrabold text-center mb-12 gradient-text">Our Comics</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="bg-white rounded-lg overflow-hidden hover-card transition p-6">
+        <img src="Screenshot 2024-12-19 131317.png" class="w-full h-56 object-cover" alt="Comic 1">
+        <h4 class="text-xl font-bold mt-6 text-shadow">Highly Flammable Book-1: Chapter-1</h4>
+        <p class="text-gray-600 mt-3">Embark on a thrilling journey through this comic!</p>
+        <a href="CH1 (2).pdf" class="mt-4 inline-block bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">View More</a>
       </div>
-      <div class="bg-white shadow rounded-lg overflow-hidden hover:bg-gray-200 transition duration-300">
-        <img src="ai-generated-8130760_1280.jpg" alt="Comic 1" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-bold text-lg">The Ultimate Great Fellow</h4>
-          <p class="text-gray-600 mt-2">An exciting adventure awaits you in this gripping tale.</p>
-          <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"><a href="tugf.html" target="_blank">View More </a></button>
-        </div>
+
+      <div class="bg-white rounded-lg overflow-hidden hover-card transition p-6">
+        <img src="ai-generated-8130760_1280.jpg" class="w-full h-56 object-cover" alt="Comic 2">
+        <h4 class="text-xl font-bold mt-6 text-shadow">The Ultimate Great Fellow</h4>
+        <p class="text-gray-600 mt-3">Experience the ultimate adventure!</p>
+        <a href='/tugf' class="mt-4 inline-block bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">View More</a>
       </div>
-      <!-- Repeat for more comics -->
-      <div class="bg-white shadow rounded-lg overflow-hidden hover:bg-gray-200 transition duration-300">
-        <img src="Screenshot 2024-12-19 131317.png" alt="Comic 2" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-bold text-lg">Highly Flammable Book-1: Chapter-2</h4>
-          <p class="text-gray-600 mt-2">An exciting adventure awaits you in this gripping tale.</p>
-          <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"><a href="CH 2.pdf" target="_blank">View More </a></button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 gradient-bg text-white">
+    <div class="container mx-auto text-center">
+      <h3 class="text-4xl font-bold mb-12 gradient-text">About the Authors</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="bg-gray-900 p-8 rounded-lg hover-card">
+          <img src="Screenshot 2024-12-19 125537.png" class="w-32 h-32 rounded-full mx-auto" alt="Achyut">
+          <h4 class="text-2xl font-bold mt-6">Achyut Paliwal</h4>
+          <p class="mt-4">The founder of AV'z Comicstore who is highly interested in web development, python programming, C programming and is a software developer.
+          He also loves to write comics that you can see in the website. He has also designed the website for AV'Z Comicstore. He is also the Founder and CEO of SkyDark.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-lg hover-card">
+          <img src="Screenshot 2024-12-19 145935.png" class="w-32 h-32 rounded-full mx-auto" alt="Viraj">
+          <h4 class="text-2xl font-bold mt-6">Viraj Pranshu</h4>
+          <p class="mt-4">
+          Viraj, the co-founder of AV'z Comicstore, brings unmatched energy and innovation to his comics. 
+          His unique ideas and boundless creativity make every comic an exciting journey. He is an awsome
+          writer who loves to write comics and articles.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Achyut and Viraj Section -->
-<section class="bg-gradient-to-t from-blue-500 to-green-100 py-16">
-  <div class="container mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-4">About the authors</h3>
-    <p class="mb-6 text-gray-600">
-      Achyut and Viraj, the masterminds behind AV'z Comicstore, bring a fresh perspective to storytelling. 
-      Their creative partnership has given rise to some of the most thrilling and imaginative comics you'll ever read. 
-      Together, they strive to push the boundaries of creativity and captivate readers with unforgettable tales.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 p-4 bg-gray-500">
-      <!-- Achyut Card -->
-      <div class="bg-gray-100 shadow-lg rounded-lg p-6 hover:bg-gray-300 transition duration-300">
-        <img src="Screenshot 2024-12-19 125537.png" alt="Achyut" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-        <h4 class="text-xl font-bold mb-2">Achyut Paliwal</h4>
-        <p class="text-gray-600">
-          The founder of AV'z Comicstore who is highly interested in web development, python programming, C programming and is a software developer.
-          He also loves to write comics that you can see in the website. He has also designed the website for AV'Z Comicstore. He is also the Founder and CEO of SkyDark.
-        </p>
-      </div>
-      <!-- Viraj Card -->
-      <div class="bg-gray-100 shadow-lg rounded-lg p-6 hover:bg-gray-300 transition duration-300">
-        <img src="Screenshot 2024-12-19 145935.png" alt="Viraj" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
-        <h4 class="text-xl font-bold mb-2">Viraj Pranshu</h4>
-        <p class="text-gray-600">
-          Viraj, the co-founder of AV'z Comicstore, brings unmatched energy and innovation to his comics. 
-          His unique ideas and boundless creativity make every comic an exciting journey. He is an awsome
-          writer who loves to write comics and articles.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-2">
+  <footer class="bg-gray-900 text-white text-center py-6">
     <p>&copy; 2024 AV'z Comicstore. All Rights Reserved.</p>
-    <a href="https://achyutpaliwal.netlify.app/" target="_blank" class="text-blue-400 hover:underline">Website created by Achyut Paliwal</a>
+    <a href="https://achyutpaliwal.netlify.app/" class="hover:underline">Designed by Achyut Paliwal</a>
   </footer>
-
-  <!-- Script for Mobile Menu -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
-
 </body>
 
 </html>
