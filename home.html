@@ -107,6 +107,33 @@
     </div>
   </section>
 
+  <!-- Email Section -->
+  <section class="container mx-auto py-20">
+    <h3 class="text-4xl font-extrabold text-center mb-12 gradient-text">Contact Us</h3>
+    <div class="bg-white shadow-lg rounded-lg p-8">
+      <form action="https://getform.io/f/anllgega" method="POST">
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="text" name="message">
+    <!-- add hidden Honeypot input to prevent spams -->
+    <input type="hidden" name="_gotcha" style="display:none !important">
+    <!-- checkbox handle -->
+    <input type="checkbox" name="subscribe" value="yes" checked>
+    <input type="hidden" name="subscribe" value="no">
+    <!-- radio button handle -->
+    <input type="radio" name="gender" value="male" checked>
+    <input type="radio" name="gender" value="female">
+    <input type="radio" name="gender" value="other">
+    <!-- select field handle -->
+    <select name="work-experience">
+        <option value="one-year">0-1 years</option>
+        <option value="one-five-years">1-5 years</option>
+    </select>
+    <button type="submit">Send</button>
+</form>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-gray-900 text-white text-center py-6">
     <p>&copy; 2024 AV'z Comicstore. All Rights Reserved.</p>
