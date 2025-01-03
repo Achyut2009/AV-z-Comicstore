@@ -48,6 +48,14 @@
       <a class='block hover:text-orange-400' href='/comics'>Comics</a>
     </div>
   </nav>
+  
+    <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      var menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
 
   <!-- Comics Section -->
   <section class="flex-grow container mx-auto px-4 py-20">
