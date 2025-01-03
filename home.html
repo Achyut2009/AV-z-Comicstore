@@ -1,4 +1,5 @@
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -45,11 +46,18 @@
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 py-4 space-y-2">
+    <div id="mobile-menu" class="hidden bg-gray-800 px-6 py-4 space-y-2">
       <a class='block hover:text-orange-400' href='/home'>Home</a>
       <a class='block hover:text-orange-400' href='/comics'>Comics</a>
     </div>
   </nav>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      var menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Hero Section -->
   <section class="py-32 text-center text-white gradient-bg bg-cover bg-center" style="background-image: url('draco.jpg');">
