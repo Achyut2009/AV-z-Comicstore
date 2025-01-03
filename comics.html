@@ -3,44 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comics - AV'z Comicstore</title>
+  <meta name="google-site-verification" content="wCirJoADaKA55lf_yXGAhT7xQEr3QQXk6g6ADvVCq04" />
+  <title>AV'z Comicstore</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <meta property="og:title" content="AV'z Comicstore">
+  <meta property="og:site_name" content="AV'z Comicstore">
+  <meta property="og:url" content="https://avzcomicomicstore.netlify.app/">
   <style>
-    /* Custom Styles for Hamburger Menu */
-    .hamburger div {
-      transition: all 0.3s ease-in-out;
+    .gradient-bg {
+      background: linear-gradient(135deg, #1f2937, #4b5563, #6b7280);
     }
-    .hamburger.cross div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+    .gradient-text {
+      background: linear-gradient(90deg, #f97316, #ef4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .hamburger.cross div:nth-child(2) {
-      opacity: 0;
+    .hover-card:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-5px);
     }
-    .hamburger.cross div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+    .text-shadow {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+<body class="bg-gray-100 text-gray-800 font-sans">
 
   <!-- Navbar -->
-  <nav class="bg-gray-900 text-white fixed w-full top-0 z-50 shadow-lg">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="text-2xl font-bold">AV'z Comicstore</div>
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="home.html" class="hover:text-blue-400 transition">Home</a></li>
-        <li><a href="comics.html" class="hover:text-blue-400 transition">Comics</a></li>
-      </ul>
-      <div class="hamburger md:hidden flex flex-col cursor-pointer" onclick="toggleMenu()">
-        <div class="bg-white w-6 h-0.5 mb-1"></div>
-        <div class="bg-white w-6 h-0.5 mb-1"></div>
-        <div class="bg-white w-6 h-0.5"></div>
+  <nav class="gradient-bg text-white shadow-lg">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="/home" class="text-3xl font-extrabold gradient-text">AV'z Comicstore</a>
+      <div class="space-x-6 hidden md:flex">
+        <a class='hover:text-orange-400' href='/home'>Home</a>
+        <a class='hover:text-orange-400' href='/comics'>Comics</a>
       </div>
+      <button id="hamburger" class="block md:hidden text-white focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
     </div>
-    <ul class="hidden absolute top-14 right-0 bg-gray-900 text-center w-48 py-2 shadow-lg space-y-2 md:hidden" id="mobileMenu">
-      <li><a href="home.html" class="block hover:text-blue-400 transition">Home</a></li>
-      <li><a href="comics.html" class="block hover:text-blue-400 transition">Comics</a></li>
-    </ul>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 py-4 space-y-2">
+      <a class='block hover:text-orange-400' href='/home'>Home</a>
+      <a class='block hover:text-orange-400' href='/comics'>Comics</a>
+    </div>
   </nav>
 
   <!-- Comics Section -->
@@ -75,7 +81,7 @@
         <h3 class="text-xl font-semibold mb-2">"The Ultimate Great Fellow"</h3>
         <p class="text-gray-600">COMING SOON...</p>
         <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
-          <a href="tugf.html" target="_blank">View More </a>
+          <a href='/tugf' target='_blank'>View More </a>
         </button>
       </div>
       <div class="comic-card bg-white shadow-md rounded-lg w-full p-6 transform hover:bg-gray-200 transition duration-300" data-title="Highly Flammable Part-2">
@@ -89,7 +95,7 @@
         <h3 class="text-xl font-semibold mb-2">"Highly Flammable Book-1: Chapter-3"</h3>
         <p class="text-gray-600">COMING SOON...</p>
         <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
-          <a href="comingsoon.html" target="_blank">View More </a>
+          <a href='/comingsoon' target='_blank'>View More </a>
         </button>
       </div>
     </div>
