@@ -15,17 +15,59 @@
     .gradient-bg {
       background: linear-gradient(135deg, #1f2937, #4b5563, #6b7280);
     }
+
     .gradient-text {
       background: linear-gradient(90deg, #f97316, #ef4444);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .hover-card:hover {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
       transform: translateY(-5px);
     }
+
     .text-shadow {
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -53,7 +95,7 @@
   </nav>
 
   <script>
-    document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('hamburger').addEventListener('click', function () {
       var menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
     });
@@ -61,7 +103,7 @@
 
   <!-- Hero Section -->
   <section class="py-32 text-center text-white gradient-bg bg-cover bg-center" style="background-image: url('draco.jpg');">
-    <div class="container mx-auto">
+    <div class ="container mx-auto">
       <h2 class="text-5xl font-extrabold mb-4 gradient-text">Welcome to AV'z Comicstore</h2>
       <p class="text-lg mb-8">Thrilling adventures by Viraj and Achyut await you!</p>
       <a class='bg-orange-500 py-3 px-6 rounded-full shadow-lg hover:bg-orange-600 transition' href='/comics'>Explore Comics</a>
@@ -69,55 +111,91 @@
   </section>
 
   <!-- Comics Section -->
-<section class="container mx-auto py-20">
-  <h3 class="text-4xl font-extrabold text-center mb-12 gradient-text">Our Comics</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-    <!-- Comic 1 -->
-    <div class="bg-white rounded-lg overflow-hidden hover-card transition p-6">
-      <img src="Screenshot 2024-12-19 131317.png" class="w-full h-56 object-cover" alt="Comic 1">
-      <h4 class="text-xl font-bold mt-6 text-shadow">Highly Flammable Book-1: Chapter-1</h4>
-      <p class="text-gray-600 mt-3">Embark on a thrilling journey through this comic!</p>
-      <a href="Highly Flammable Book-1, Chapter 1.pdf" class="mt-4 inline-block bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">View More</a>
+  <section class="container mx-auto py-20">
+    <h3 class="text-4xl font-extrabold text-center mb-12 gradient-text">Our Comics</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Comic 1 -->
+      <div class="bg-white rounded-lg overflow-hidden hover-card transition p-6">
+        <img src="Screenshot 2024-12-19 131317.png" class="w-full h-56 object-cover" alt="Comic 1">
+        <h4 class="text-xl font-bold mt-6 text-shadow">Highly Flammable Book-1: Chapter-1</h4>
+        <p class="text-gray-600 mt-3">Embark on a thrilling journey through this comic!</p>
+        <a href="Highly Flammable Book-1, Chapter 1.pdf" class="mt-4 inline-block bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">View More</a>
+      </div>
+
+      <!-- Comic 2 -->
+      <div class="bg-white rounded-lg overflow-hidden hover-card transition p-6">
+        <img src="ai-generated-8130760_1280.jpg" class="w-full h-56 object-cover" alt="Comic 2">
+        <h4 class="text-xl font-bold mt-6 text-shadow">The Ultimate Great Fellow</h4>
+        <p class="text-gray-600 mt-3">Experience the ultimate adventure!</p>
+        <a href="/tugf" class="mt-4 inline-block bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">View More</a>
+      </div>
+
+      <!-- GIF Animation -->
+      <div class="bg-white rounded-lg overflow-hidden hover-card transition p-6">
+        <img src="avzcomicstorelogo.gif.gif" class="w-full h-56 object-cover" alt="Animated Comic GIF">
+      </div>
     </div>
-
-    <!-- Comic 2 -->
-    <div class="bg-white rounded-lg overflow-hidden hover-card transition p-6">
-      <img src="ai-generated-8130760_1280.jpg" class="w-full h-56 object-cover" alt="Comic 2">
-      <h4 class="text-xl font-bold mt-6 text-shadow">The Ultimate Great Fellow</h4>
-      <p class="text-gray-600 mt-3">Experience the ultimate adventure!</p>
-      <a href="/tugf" class="mt-4 inline-block bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">View More</a>
-    </div>
-
-    <!-- GIF Animation -->
-    <div class="bg-white rounded-lg overflow-hidden hover-card transition p-6">
-      <img src="avzcomicstorelogo.gif.gif" class="w-full h-56 object-cover" alt="Animated Comic GIF">
-    </div>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- About Section -->
   <section class="py-20 gradient-bg text-white">
     <div class="container mx-auto text-center">
       <h3 class="text-4xl font-bold mb-12 gradient-text">About the Authors</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="bg-gray-900 p-8 rounded-lg hover-card">
-          <img src="Screenshot 2024-12-19 125537.png" class="w-32 h-32 rounded-full mx-auto" alt="Achyut">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-4">
+        <div class="bg-gray-900 p-8 rounded-lg hover-card" onclick="openModal('Achyut')">
+          <img src="Screenshot 2024-12-19 125537.png" class="w-32 h-32 rounded-lg mx-auto" alt="Achyut">
           <h4 class="text-2xl font-bold mt-6">Achyut Paliwal</h4>
-          <p class="mt-4">A software developer and comic creator passionate about web development.</p>
+          <p class="mt-4">The founder of AVz comicstore who is very passionate about programming, web development and writing. He is also the founder and ceo of SkyDark</p>
         </div>
-        <div class="bg-gray-900 p-8 rounded-lg hover-card">
-          <img src="Screenshot 2024-12-19 145935.png" class="w-32 h-32 rounded-full mx-auto" alt="Viraj">
+        <div class="bg-gray-900 p-8 rounded-lg hover-card" onclick="openModal('Viraj')">
+          <img src="Screenshot 2024-12-19 145935.png" class="w-32 h-32 rounded-lg mx-auto" alt="Viraj">
           <h4 class="text-2xl font-bold mt-6">Viraj Pranshu</h4>
-          <p class="mt-4">A creative writer and co-founder bringing stories to life!</p>
+          <p class="mt-4">A creative writer and co-founder of AVz comicstore bringing stories to life! He is also a very professional badminton player who had won the 1st place in international level in Kuwait.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+      <p id="modalDescription" class="mt-4"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(author) {
+      const modal = document.getElementById("myModal");
+      const title = document.getElementById("modalTitle");
+      const description = document.getElementById("modalDescription");
+
+ if (author === 'Achyut') {
+        title.innerText = 'Achyut Paliwal';
+        description.innerText = 'The founder of AVz comicstore who is very passionate about programming, web development and writing. He is also the founder and ceo of SkyDark';
+      } else if (author === 'Viraj') {
+        title.innerText = 'Viraj Pranshu';
+        description.innerText = 'A creative writer and co-founder of AVz comicstore bringing stories to life! He is also a very professional badminton player who had won the 1st place in international level in Kuwait.';
+      }
+      modal.style.display = "flex";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("myModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
   <!-- Email Section -->
-  <section class="container mx-auto py-20">
+  <section class="container mx-auto py-20 px-20">
     <h3 class="text-4xl font-extrabold text-center mb-12 gradient-text">Contact Us</h3>
     <div class="bg-white shadow-lg rounded-lg p-8">
       <form action="https://getform.io/f/anllgega" method="POST">
@@ -139,9 +217,9 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6">
+  <footer class="bg-gray-900 text-white text-center py-3">
     <p>&copy; 2024 AV'z Comicstore. All Rights Reserved.</p>
-    <a href="https://achyutpaliwal.netlify.app/" class="hover:underline">Designed by Achyut Paliwal</a>
+    <a href="https://achyutpaliwal.netlify.app/" class="hover:underline text-blue-500" target="_blank">Designed by Achyut Paliwal</a>
   </footer>
 </body>
 
